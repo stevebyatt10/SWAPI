@@ -76,7 +76,6 @@ public struct Starship: Codable, Hashable {
             return c == ","
         }
         let len = Double(length) ?? 0
-        print(len)
         return len
     }
     

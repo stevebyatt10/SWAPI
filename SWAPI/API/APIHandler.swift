@@ -61,15 +61,14 @@ class SWAPI {
         sessionManager.request(pageURL, method: .get).responseDecodable(of: StarshipsResponse.self) { response in
             switch response.result {
             case .success:
-                print("success")
                 guard let val = response.value else {
                     handler(nil, [])
                     return
                 }
+                
                 handler(val.next, val.results ?? [])
                 
             case let .failure(error):
-                print("error")
                 print(error)
             }
         }
